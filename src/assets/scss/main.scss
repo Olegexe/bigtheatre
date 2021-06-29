@@ -1,0 +1,13 @@
+@import './utils/fonts.scss';
+@import './utils/vars.scss';
+@import './utils/reset.scss';
+@import './utils/mixins.scss';
+
+body {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.container {
+    max-width: fit-content;
+}
