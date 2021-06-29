@@ -1,21 +1,20 @@
 //Font
-$default-font: montserrat-regular, sans-serif;
-$default-bold-font: montserrat-bold, sans-serif;
+$f-headers: 'Open Sans Condensed', sans-serif;
+$f-default: 'Open Sans', sans-serif;
 
 
 //Colors
-$darkShade100: #1F2041;
-$darkShade75: rgba($darkShade100, .75);
-$darkShade50: rgba($darkShade100, .50);
-$darkShade25: rgba($darkShade100, .25);
-$darkShade10: rgba($darkShade100, .10);
-$darkShade5: rgba($darkShade100, .5);
-$purple: #BC9CFF;
-$green: #6FCF97;
+$c-gold: #D1A954;
+$c-black: #333333;
 
-$cosmos: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
-$green-blue: linear-gradient(180deg, $green 0%, #66D2EA 100%);
 
 //Size
 
-$containerWidth: 1200px;
+$containerWidth: 1140px;
+
+
+//Breakpoitns
+
+$lg: 992px;
+$md: 768px;
+$sm: 576px;

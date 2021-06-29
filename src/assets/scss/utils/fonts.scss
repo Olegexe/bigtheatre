@@ -1,13 +1,11 @@
 @font-face {
-    font-family: "montserrat-regular";
-    src: url('../fonts/Montserrat-Regular.eot');
-    src: url('../fonts/Montserrat-Regular.ttf') format('truetype'),
-         url('../fonts/Montserrat-Regular.woff') format('woff'),
-}
-
-@font-face {
-    font-family: "montserrat-bold";
-    src: url('../fonts/Montserrat-Bold.eot');
-    src: url('../fonts/Montserrat-Bold.ttf') format('truetype'),
-         url('../fonts/Montserrat-Bold.woff') format('woff'),
-}
+    font-family: 'icon';
+    src:  url('../fonts/icon.eot?canka1');
+    src:  url('../fonts/icon.eot?canka1#iefix') format('embedded-opentype'),
+      url('../fonts/icon.ttf?canka1') format('truetype'),
+      url('../fonts/icon.woff?canka1') format('woff'),
+      url('../fonts/icon.svg?canka1#icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
