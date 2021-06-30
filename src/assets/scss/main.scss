@@ -4,6 +4,10 @@
 @import './utils/mixins.scss';
 @import './icon-font.scss';
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: $f-default;
     font-size: 14px;
@@ -12,7 +16,333 @@ body {
     background-color: $c-black;
 }
 
+h1 {
+    font-family: $f-headers;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 87px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: $f-headers;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 65px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
+    span {
+        color: $c-gold;
+    }
+}
+
+h3 {
+    font-family: $f-headers;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+.p-18b, .p-16b, .p-21b {
+    font-family: $f-headers;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.p-18b {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.1rem;
+}
+
+.p-16b {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.05rem;
+}
+
+.p-21b {
+    font-style: 21px;
+    line-height: 29px;
+    letter-spacing: 0.1rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
+    margin: 0 auto;
     max-width: $containerWidth;
     padding: 0 15px;
+}
+
+.button {
+    background-color: $c-gold;
+    color: #FFFFFF;
+    font-family: $f-headers;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    height: 50px;
+    padding: 0 47px;
+    cursor: pointer;
+}
+
+.burger {
+    display: none;
+
+    &__button {
+        @include size(40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        color: #FFFFFF;
+        font-size: 40px;
+    }
+
+    &__close-btn {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        @include size(32px);
+        font-size: 32px;
+        color: #FFFFFF;
+    }
+
+    &__body {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 140px 47px 143px 39px;
+        max-width: 300px;
+        background-color: $c-black;
+        z-index: 50;
+    }
+
+    &__menu-list {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    &__social-list {
+        max-width: 140px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        color: #FFFFFF;
+        font-size: 45px;
+    }
+
+    &__social-item {
+        margin-bottom: 50px;
+    }
+
+    @media(max-width: $lg) {
+        display: block;
+    }
+}
+
+
+.header {
+    flex: 0 0 auto;
+    background-image: url('../img/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__content {
+        padding: 190px 0 208px;
+        display: flex;
+        justify-content: space-between;
+        gap: 125px;
+    }
+
+    &__text-block {
+        flex-basis: 50%;
+        padding-top: 118px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        margin-bottom: 45px;
+    }
+
+    &__slider {
+        flex-basis: 50%;
+        margin-right: 75px;
+        max-width: 370px;
+        width: 100%;
+    }
+
+    &__slider-content {
+        margin-bottom: 48px;
+        position: relative;
+    }
+
+    &__slider-front-img {
+        position: relative;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        z-index: 5;
+    }
+
+    &__slider-back-img {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        z-index: 4;
+
+        img {
+            position: relative;
+            z-index: 3;
+        }
+    }
+    &__slider-back-img-blur {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        background: linear-gradient(0deg, rgba(209, 169, 84, 0.85), rgba(209, 169, 84, 0.85));
+    }
+
+    &__slider-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__slider-button {
+        background: transparent;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    &__slider-arrow {
+        font-size: 38px;
+    }
+
+    @media (max-width: $xl) {
+        &__inner {
+            grid-column: 3 / 12;
+        }
+        &__content {
+            padding: 114px 0 208px;
+        }
+        &__slider {
+            display: none;
+        }
+        &__text-block {
+            flex-basis: 540px;
+        }
+    }
+    @media (max-width: $lg) { 
+        &__content {
+            padding: 44px 0 208px;
+            justify-content: center;
+        }
+    }
+    @media(max-width: $md) {
+        &__content {
+            padding: 44px 17px 208px;
+        }
+        &__text-block {
+            flex-basis: 100%;
+            padding-top: 63px;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    flex-wrap: wrap;
+
+    &__menu-list {
+        display: flex;
+        align-items: center;
+        gap: 63px;
+    }
+
+    &__menu-item {
+        text-transform: uppercase;
+    }
+
+    &__phone {
+        border-bottom: solid 2px $c-gold;
+        padding-bottom: 3px;
+    }
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+        gap: 50px;
+
+        &__menu-list {
+            gap: 30px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media(max-width: $lg) {
+        padding: 0 23px;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__menu-list {
+            display: none;
+        }
+    }
+
+    @media(max-width: $md) {
+        padding: 0 18px;
+    }
+}
+
+
+.main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+@media(max-width: $xl) {
+    .container {
+        max-width: 960px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 30px;
+    }
+}
+
+@media(max-width: $lg) {
+    .container {
+        display: block;
+    }
 }

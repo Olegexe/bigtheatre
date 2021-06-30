@@ -57,6 +57,19 @@ module.exports = {
                 ],
             },
             {
+                test: /\.(svg|png|jpeg|jpg|gif)([\?]?.*)$/,
+                exclude: [/src\/fonts/],
+                use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'assets/img/'
+                            }
+                        }
+                ],
+            },
+            {
                 test: /\.(sass|css|scss)$/,
                 use: [
                     'style-loader',

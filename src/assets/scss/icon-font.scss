@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-close:before {
+  content: "\e90b";
+}
+._icon-burger:before {
+  content: "\e90a";
+}
 ._icon-search:before {
   content: "\e908";
 }

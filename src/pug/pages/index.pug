@@ -1,7 +1,74 @@
 html
     head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)    
         link(href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet")
         title="Big Theatre"
     body
+        .wrapper
+            header.header
+                .container
+                    .header__inner
+                        nav.nav
+                            .burger
+                                button(class="burger__button _icon-burger")
+                                .burger__body
+                                    .burger__close-btn
+                                        span._icon-close
+                                    ul.burger__menu-list 
+                                        li.burger__menu-item
+                                            a(class="burger__menu-link p-18b" href="#")="Главная"
+                                        li.burger__menu-item
+                                            a(class="burger__menu-link p-18b" href="#")="о театре"
+                                        li.burger__menu-item
+                                            a(class="burger__menu-link p-18b" href="#")="Наши постановки"
+                                        li.burger__menu-item
+                                            a(class="burger__menu-link p-18b" href="#")="партнеры театра"
+                                        li.burger__menu-item
+                                            a(class="burger__menu-link p-18b" href="#")="контакты"
+                            ul.nav__menu-list 
+                                li.nav__menu-item
+                                    a(class="nav__menu-link p-18b" href="#")="Главная"
+                                li.nav__menu-item
+                                    a(class="nav__menu-link p-18b" href="#")="о театре"
+                                li.nav__menu-item
+                                    a(class="nav__menu-link p-18b" href="#")="Наши постановки"
+                                li.nav__menu-item
+                                    a(class="nav__menu-link p-18b" href="#")="партнеры театра"
+                                li.nav__menu-item
+                                    a(class="nav__menu-link p-18b" href="#")="контакты"
+                            .nav__phone
+                                a(class=".header__phone-link p-16b" href="tel:+74951234567")="+7 495 123-45-67"
+                        .header__content
+                            .header__text-block
+                                h1.header__title="Большой театр"
+                                p.header__text Большо́й теа́тр — петербургский театр, существовавший в 1784—1886 годах, с&nbsp;1886 года — Петербургская консерватория. Первое постоянное в Санкт&#8209;Петербурге, крупнейшее в России и одно из крупнейших театральных зданий в Европе XVIII.
+                                button(class="header__button button")="Афиша"
+                            .header__slider
+                                .header__slider-content
+                                    .header__slider-front-img
+                                        img(src="/assets/img/slider-img.jpg", alt="poster")
+                                    .header__slider-back-img
+                                        .header__slider-back-img-blur
+                                        img(src="/assets/img/slider-img.jpg", alt="poster")
+                                .header__slider-buttons
+                                    button(class="header__slider-button header__slider-button_prev p-18b")
+                                        span(class="header__slider-arrow _icon-arrow-left")
+                                        span="Пред"
+                                    button(class="header__slider-button header__slider-button_next p-18b")
+                                        span="След"
+                                        span(class="header__slider-arrow _icon-arrow-right")
+            main.main
+                section.about
+                    .container
+                section.performances
+                    .container
+                section.testimonials
+                    .container
+                section.partnerts
+                    .container
+                section.donate
+                    .container
+            footer.footer
+                .container
