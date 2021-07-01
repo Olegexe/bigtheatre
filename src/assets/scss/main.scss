@@ -47,7 +47,17 @@ h3 {
     color: #FFFFFF;
 }
 
-.p-18b, .p-16b, .p-21b {
+.section-header {
+    margin-bottom: 100px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media(max-width: $lg) {
+        margin-bottom: 60px;
+    }
+}
+
+.p-18b, .p-16b, .b-21b {
     font-family: $f-headers;
     font-weight: 700;
     color: #FFFFFF;
@@ -65,10 +75,11 @@ h3 {
     letter-spacing: 0.05rem;
 }
 
-.p-21b {
-    font-style: 21px;
+.b-21b {
+    font-size: 21px;
     line-height: 29px;
     letter-spacing: 0.1rem;
+    font-weight: 700;
 }
 
 .wrapper {
@@ -121,7 +132,7 @@ h3 {
     }
 
     &__body {
-        display: flex;
+        display: none; //flex
         position: fixed;
         left: 0;
         top: 0;
@@ -249,7 +260,7 @@ h3 {
             grid-column: 3 / 12;
         }
         &__content {
-            padding: 114px 0 208px;
+            padding: 114px 0 363px;
         }
         &__slider {
             display: none;
@@ -266,7 +277,7 @@ h3 {
     }
     @media(max-width: $md) {
         &__content {
-            padding: 44px 17px 208px;
+            padding: 45px 17px 106px;
         }
         &__text-block {
             flex-basis: 100%;
@@ -323,9 +334,107 @@ h3 {
     }
 }
 
-
 .main {
     flex: 1 0 auto;
+}
+
+.about {
+    padding: 145px 0; // 150px 0
+
+    &__content {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin-bottom: 33px;
+        text-transform: uppercase;
+    }
+
+    &__description {
+        flex-basis: 445px;
+    }
+
+    &__numbers {
+        flex-grow: 1;
+    }
+
+    &__numbers-item + &__numbers-item {
+        margin-top: 20px;
+    }
+
+    &__numbers-icon {
+        @include size(70px);
+        font-size: 70px;
+        color: #FFFFFF;
+    }
+
+    &__numbers-text {
+        margin-top: 15px;
+
+        span {
+            color: $c-gold;
+        }
+    }
+
+    &__image {
+        flex-basis: 350px;
+    }
+
+    @media(max-width: $xl) {
+        padding: 152px 0;
+
+        &__inner {
+            grid-column: 3 / 12;
+        }
+        &__content {
+            justify-content: normal;
+        }
+        &__numbers {
+            flex-grow: 0;
+        }
+        &__image {
+            display: none;
+        }
+    }
+
+    @media(max-width: $lg) {
+        padding: 134px 0;
+
+        &__inner {
+            padding: 0px 24px;
+        }
+    }
+
+    @media(max-width: $md) {
+        padding: 80px 0;
+
+        &__inner {
+            padding: 0 20px;
+        }
+
+        &__content {
+            flex-direction: column;
+            text-align: center;
+            gap: 50px;
+        }
+
+        &__description {
+            flex-basis: 100%;
+        }
+
+        &__numbers-list {
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        &__numbers-item + &__numbers-item {
+            margin: 0;
+        }
+    }
 }
 
 .footer {
