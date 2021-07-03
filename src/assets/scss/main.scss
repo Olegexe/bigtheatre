@@ -16,6 +16,10 @@ body {
     background-color: $c-black;
 }
 
+body._lock {
+    overflow: hidden;
+}
+
 h1 {
     font-family: $f-headers;
     font-size: 64px;
@@ -45,6 +49,10 @@ h3 {
     line-height: 33px;
     letter-spacing: 0.05em;
     color: #FFFFFF;
+}
+
+a {
+    color: inherit;
 }
 
 .section-header {
@@ -94,9 +102,17 @@ h3 {
 }
 
 .fluid-container {
-    padding-left: calc(50% - (1140px / 2) - 13.25%); // margin-left: calc(50% - (1140px / 2) - 255px);
-    // padding-left: 15px;
+    // padding-left: calc(50% - (1140px / 2) - 150px); // margin-left: calc(50% - (1140px / 2) - 255px);
+    padding-left: 135px;
     overflow: hidden;
+
+    @media(max-width: $xl) {
+        padding-left: 176px;
+    }
+
+    @media(max-width: $lg) {
+        padding-left: 23px;
+    }
 }
 
 .button {
@@ -135,26 +151,55 @@ h3 {
         @include size(32px);
         font-size: 32px;
         color: #FFFFFF;
+        background: transparent;
+        font-size: 16px;
     }
 
     &__body {
-        display: none; //flex
+        display: flex;
+        flex-direction: column;
         position: fixed;
-        left: 0;
+        left: -100%;
         top: 0;
-        padding: 140px 47px 143px 39px;
+        padding: 0 46px 0 39px;
         max-width: 300px;
+        max-height: 100vh;
+        width: 100%;
         background-color: $c-black;
         z-index: 50;
+        overflow: hidden;
+        transition: left 0.3s ease;
+
+        &_active {
+            left: 0;
+        }
+    }
+
+    &__lists-wrap {
+        overflow-y: auto;
     }
 
     &__menu-list {
+        padding-top: 140px;
+        display: flex;
         flex-direction: column;
         gap: 35px;
+        margin-bottom: 89px;
+    }
+
+    &__menu-item {
+        font-family: $f-headers;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 33px;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+        text-transform: uppercase;
     }
 
     &__social-list {
-        max-width: 140px;
+        padding: 0 15px 143px;
+        width: 220px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -163,11 +208,16 @@ h3 {
     }
 
     &__social-item {
-        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 50%;
+        margin-bottom: 45px;
     }
 
+
     @media(max-width: $lg) {
-        display: block;
+        display: flex;
     }
 }
 
@@ -389,7 +439,7 @@ h3 {
     }
 
     @media(max-width: $xl) {
-        padding: 152px 0;
+        padding: 152px 0 147px;
 
         &__inner {
             grid-column: 3 / 12;
@@ -406,7 +456,7 @@ h3 {
     }
 
     @media(max-width: $lg) {
-        padding: 134px 0;
+        padding: 134px 0 86px 0;
 
         &__inner {
             padding: 0px 24px;
@@ -519,10 +569,256 @@ h3 {
         color: #FFFFFF;
         z-index: 5;
     }
+
+    @media(max-width: $xl) {
+        & .container {
+            display: block;
+        }
+    }
+
+    @media(max-width: $lg) {
+        margin-bottom: 90px;
+    }
+}
+
+
+.testimonials {
+    margin-bottom: 155px;
+
+    &__inner {
+        padding: 126px 178px 126px 190px;
+        background-image: url('../img/testimonials-bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: 124px;
+    }
+
+    &__date-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__date-item {
+        font-family: $f-headers;
+        font-size: 72px;
+        line-height: 98px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: $c-gold;
+    }
+
+    &__rate-list {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+
+    &__rate-item {
+        color: $c-gold;
+        font-size: 23px;
+        @include size(26px, 24px);
+    }
+
+    &__rate-text {
+        font-family: $f-default;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 54px;
+    }
+
+    @media(max-width: $xl) {
+        & .container {
+            max-width: 100%;
+            padding: 0;
+            display: block;
+        }
+
+        &__inner {
+            padding: 126px 120px 124px 99px;
+        }
+
+        &__body {
+            gap: 80px;
+        }
+
+        &__rate-text {
+            font-size: 34px;
+            line-height: 51px;
+        }
+
+        &__rate-item {
+            width: 22px;
+        }
+
+        &__rate-list {
+            gap: 20px
+        }
+
+    }
+
+    @media(max-width: $lg) {
+        margin-bottom: 94px;
+
+        &__inner {
+            padding: 126px 120px 126px 99px;
+        }
+
+        &__body {
+            gap: 20px;
+        }
+
+        &__rate-text {
+            font-size: 29px;
+            line-height: 44px;
+        }
+    }
+}
+
+.partners {
+    margin-bottom: 120px;
+
+    &__list {
+        display: flex;
+        padding: 0 37px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 80px;
+        column-gap: 78px;
+    }
+
+    &__item {
+        flex-shrink: 0;
+    }
+
+    @media(max-width: $xl) {
+        & .container {
+            display: block;
+        }
+
+        &__list {
+            justify-content: center;
+        }
+    }
+
+    @media(max-width: $lg) {
+        margin-bottom: 90px;
+
+        &__list {
+            padding: 0 24px;
+            column-gap: 40px;
+            justify-content: center;
+        }
+    }
+}
+
+.donate {
+    margin-bottom: 80px;
+
+    a {
+        color: inherit;
+    }
+
+    &__body {
+        display: flex;
+        gap: 125px;
+    }
+
+    &__contacts {
+        flex-basis: 255px;
+        flex-shrink: 0;
+    }
+
+    &__contacts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__contacts-item {
+        text-transform: uppercase;
+    }
+
+    &__form {
+        display: grid;
+        grid-template-areas: 
+            'inputs textarea'
+            'info button';
+        row-gap: 40px;
+        column-gap: 30px;
+    }
+
+    &__form-inputs {
+        grid-area: inputs;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        flex-basis: calc(50% - 30px);
+        border: none;
+    }
+
+    &__form-input {
+        background: #444444;
+        border: 1px solid #616161;
+        height: 35px;
+        color: #989898;
+        padding: 0 15px;
+        flex-basis: calc(50% - 30px);
+        max-width: 180px;
+    }
+
+    &__form-textarea {
+        grid-area: textarea;
+        background: #444444;
+        border: 1px solid #616161;
+        height: 100px;
+        color: #989898;
+        padding: 0 15px;
+        min-width: 310px;
+    }
+
+    &__form-info {
+        grid-area: info;
+        font-size: 12px;
+        line-height: 18px;
+        color: #989898;
+    }
+
+    &__form-button {
+        grid-area: button;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    @media(max-width: $xl) {
+        & .container {
+            display: block;
+        }
+        &__body {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 .footer {
     flex: 0 0 auto;
+
+    &__inner {
+        border-top: 1px solid #565656;
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #989898;
+        font-size: 12px;
+        line-height: 18px;
+    }
 }
 
 @media(max-width: $xl) {

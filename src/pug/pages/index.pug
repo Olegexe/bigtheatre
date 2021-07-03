@@ -14,19 +14,28 @@ html
                             .burger
                                 button(class="burger__button _icon-burger")
                                 .burger__body
-                                    .burger__close-btn
-                                        span._icon-close
-                                    ul.burger__menu-list 
-                                        li.burger__menu-item
-                                            a(class="burger__menu-link p-18b" href="#")="Главная"
-                                        li.burger__menu-item
-                                            a(class="burger__menu-link p-18b" href="#")="о театре"
-                                        li.burger__menu-item
-                                            a(class="burger__menu-link p-18b" href="#")="Наши постановки"
-                                        li.burger__menu-item
-                                            a(class="burger__menu-link p-18b" href="#")="партнеры театра"
-                                        li.burger__menu-item
-                                            a(class="burger__menu-link p-18b" href="#")="контакты"
+                                    button(class="burger__close-btn _icon-close")
+                                    .burger__lists-wrap
+                                        ul.burger__menu-list 
+                                            li.burger__menu-item
+                                                a(class="burger__menu-link" href="#")="Главная"
+                                            li.burger__menu-item
+                                                a(class="burger__menu-link" href="#")="о театре"
+                                            li.burger__menu-item
+                                                a(class="burger__menu-link" href="#")="Наши постановки"
+                                            li.burger__menu-item
+                                                a(class="burger__menu-link" href="#")="партнеры театра"
+                                            li.burger__menu-item
+                                                a(class="burger__menu-link" href="#")="контакты"
+                                        ul.burger__social-list
+                                            li.burger__social-item
+                                                a(class="_icon-facebook" href="#") 
+                                            li.burger__social-item
+                                                a(class="_icon-instagram" href="#")
+                                            li.burger__social-item
+                                                a(class="_icon-youtube" href="#") 
+                                            li.burger__social-item
+                                                a(class="_icon-vk" href="#") 
                             ul.nav__menu-list 
                                 li.nav__menu-item
                                     a(class="nav__menu-link p-18b" href="#")="Главная"
@@ -129,9 +138,89 @@ html
 
                 section.testimonials
                     .container
-                section.partnerts
+                        .testimonials__inner
+                            .testimonials__body
+                                .testimonials__dates
+                                    ul.testimonials__date-list
+                                        li.testimonials__date-item="2018"
+                                        li.testimonials__date-item="2019"
+                                        li.testimonials__date-item="2020"
+                                .testimonials__rate
+                                    ul.testimonials__rate-list
+                                        li.testimonials__rate-item
+                                            span._icon-star
+                                        li.testimonials__rate-item
+                                            span._icon-star
+                                        li.testimonials__rate-item
+                                            span._icon-star
+                                        li.testimonials__rate-item
+                                            span._icon-star
+                                        li.testimonials__rate-item
+                                            span._icon-star
+                                    p.testimonials__rate-text Лучший театр по&nbsp;мнению театральных критиков Парижа
+                section.partners
                     .container
+                        .partners__inner
+                            h2.section-header
+                                span="Партнеры "
+                                !="Театра"
+                            ul.partners__list
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
+                                li.partners__item
+                                    a(class="partners__link" href="#")
+                                        img(src="/assets/img/logo.svg", alt="partner")
                 section.donate
                     .container
+                        .donate__inner
+                            h2.section-header
+                                span="Стать "
+                                !="Меценатом"
+                            .donate__body
+                                .donate__contacts
+                                    ul.donate__contacts-list
+                                        li(class="donate__contacts-item p-16b")
+                                            a(class="donate__contacts-link" href="tel:+78121234555")="+7 (812) 123-45-55"
+                                        li(class="donate__contacts-item p-16b")
+                                            a(class="donate__contacts-link" href="tel:+78121234566")="+7 (812) 123-45-66"
+                                        li(class="donate__contacts-item p-16b")
+                                            a(class="donate__contacts-link" href="mailto:info@theater.ru")="info@theater.ru"
+                                        li(class="donate__contacts-item p-16b")
+                                            span="г. санкт-петербург, невский 140"
+                                .donate__form-wrap
+                                    form(class="donate__form" method="post")
+                                        fieldset.donate__form-inputs
+                                            input(class="donate__form-input", type="text", placeholder="Имя")
+                                            input(class="donate__form-input", type="text", placeholder="Компания")
+                                            input(class="donate__form-input", type="text", placeholder="Телефон")
+                                            input(class="donate__form-input", type="text", placeholder="Email")
+                                        textarea#message(class="donate__form-textarea", name="message", placeholder="Сообщение") 
+                                        .donate__form-info
+                                            p="* Ваши данные не будут переданы третьим лицам, 100% вероятность. Конфиденциальность мы гарантируем, и защищаем персональные данные согласно законку ФЗ-52."
+                                        .donate__form-button
+                                            input(class="button" type="submit" value="Отправить")
+                                            
             footer.footer
                 .container
+                    .footer__inner
+                        span.copyrate="(с) Все права защищены. Большой театр. 2020"
+                        span.author="Design by d-e-n.ru. Developed by Olegexe"
