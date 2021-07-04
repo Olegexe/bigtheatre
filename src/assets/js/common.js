@@ -2,6 +2,47 @@
     window.onload = function() {
         document.addEventListener('click', clickHandler);
 
+        $('.partners__list').slick({
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2,
+                    }
+                },
+            ]
+        })
+
+        $('.performances__slider-track').slick({
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                    }
+                },
+            ]
+        })
+
         function clickHandler(e) {
             let target = e.target;
 

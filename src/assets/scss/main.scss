@@ -3,6 +3,7 @@
 @import './utils/reset.scss';
 @import './utils/mixins.scss';
 @import './icon-font.scss';
+@import './slick.scss';
 
 html, body {
     height: 100%;
@@ -112,6 +113,10 @@ a {
 
     @media(max-width: $lg) {
         padding-left: 23px;
+    }
+
+    @media(max-width: $md) {
+        padding-left: 18px;
     }
 }
 
@@ -464,7 +469,7 @@ a {
     }
 
     @media(max-width: $md) {
-        padding: 80px 0;
+        padding: 80px 0 75px;
 
         &__inner {
             padding: 0 20px;
@@ -678,12 +683,24 @@ a {
             line-height: 44px;
         }
     }
+
+    @media(max-width: $md) {
+        margin-bottom: 84px;
+
+        &__inner {
+            padding: 116px 55px 126px 33px;
+        }
+
+        &__rate-text {
+            font-size: 25px;
+            line-height: 38px;
+        }
+    }
 }
 
 .partners {
     margin-bottom: 120px;
-
-    &__list {
+    &__column {
         display: flex;
         padding: 0 37px;
         flex-wrap: wrap;
@@ -691,10 +708,15 @@ a {
         justify-content: space-between;
         row-gap: 80px;
         column-gap: 78px;
+        flex-direction: column;
     }
 
     &__item {
         flex-shrink: 0;
+
+        &:first-child {
+            margin-bottom: 78px;
+        }
     }
 
     @media(max-width: $xl) {
@@ -715,6 +737,10 @@ a {
             column-gap: 40px;
             justify-content: center;
         }
+    }
+    
+    @media(max-width: $md) {
+        margin-bottom: 105px;
     }
 }
 
@@ -802,6 +828,45 @@ a {
         }
         &__body {
             flex-direction: column-reverse;
+            padding: 0 23px;
+        }
+        &__form-textarea {
+            min-width: 270px;
+        }
+    }
+
+    @media(max-width: $md) {
+        &__form {
+            display: flex;
+            flex-direction: column;
+            padding: 0 20px;
+            row-gap: 33px;
+        }
+
+        &__inputs {
+            order: 1;
+            margin-bottom: 30px;
+        }
+
+        &__form-textarea {
+            order: 2;
+            margin-bottom: 6px;
+        }
+        &__form-button {
+            order: 3;
+            justify-content: center;
+        }
+        &__form-info {
+            padding: 0 30px;
+            text-align: center;
+            order: 4;
+        }
+        &__form-inputs {
+            justify-content: space-between;
+        }
+
+        &__form-input {
+            max-width: none;
         }
     }
 }
